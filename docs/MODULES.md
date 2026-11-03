@@ -1,29 +1,15 @@
 # Platform Modules
 
-## Command Centre™
-Operational nerve centre — executive dashboard, active incidents, situation timeline, response readiness, decision tracking, executive briefing view.
+| Module | BM | Purpose |
+|--------|-----|--------|
+| Command Centre™ | Pusat Perintah™ | Executive operational dashboard / gambaran operasi menyeluruh |
+| Incident Management™ | Pengurusan Insiden™ | Lifecycle from detection to closure |
+| First Sixty Minutes™ | 60 Minit Pertama™ | Guided first-hour response framework |
+| Severity Engine™ | Enjin Penentuan Tahap Krisis™ | L1–L4 classification |
+| Decision Quorum™ | Kuorum Keputusan™ | Executive approval tracking |
+| Regulatory Clock™ | Jam Pematuhan™ | Bursa, PDPA, DOSH, NACSA, SC, BNM |
+| Holding Statement Builder™ | Pembina Kenyataan Awal™ | Structured BM/EN response frameworks |
+| BoardBrief™ | Ringkasan Lembaga™ | Executive and board reporting |
+| Audit Trail™ | Jejak Audit™ | Governance and accountability |
 
-## Incident Management™
-Detection to closure — creation, classification, status, investigation records, operational updates, closure.
-
-## First Sixty Minutes™
-Guided first-hour framework — checklist, team activation, task assignment, escalation triggers, action tracking, milestones.
-
-## Severity Engine™
-L1 Routine · L2 Moderate · L3 Material Crisis · L4 Critical
-
-## Decision Quorum™
-CEO · Legal · Operations · Corporate Affairs · Compliance · Risk — participation, approvals, executive engagement.
-
-## Regulatory Clock™
-Bursa Malaysia · PDPA · DOSH · Cybersecurity / NACSA · Regulatory investigations · Sector-specific (SC, BNM)
-
-## Holding Statement Builder™
-Scenarios: data breach, product recall, industrial accident, service disruption, executive misconduct, regulatory investigation.  
-Outputs: BM · EN · media · employees · customers · investors.
-
-## BoardBrief™
-Board briefings · CEO updates · Chairman reports · situation reports · incident summaries · post-incident reviews → R2.
-
-## Audit Trail™
-Creation · activity · decisions · approvals · escalations · report generation.
+Full BM descriptions: [POSITIONING-BM.md](./POSITIONING-BM.md)

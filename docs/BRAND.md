@@ -13,37 +13,52 @@ Strategic advisory and product company focused on crisis governance, reputation 
 # Escalate MY™
 
 ### Crisis Intelligence Platform for Malaysian Organisations
+### Platform Perisikan Krisis untuk Organisasi Malaysia
 
-**From uncertainty to action in the moments that matter most.**
+| EN | BM |
+|----|-----|
+| From uncertainty to action in the moments that matter most. | **Daripada ketidakpastian kepada keputusan yang tepat.** |
+| The First Hour Decides Everything. | **Satu Jam Pertama Menentukan Hala Tuju Krisis.** |
+
+Full BM copy: [POSITIONING-BM.md](./POSITIONING-BM.md)
 
 ---
 
 ## One-line description
 
-> **Escalate MY™ is a Crisis Intelligence Platform that helps Malaysian organisations make faster, better decisions during critical incidents.**
+**EN:** Escalate MY™ is a Crisis Intelligence Platform that helps Malaysian organisations make faster, better decisions during critical incidents.
 
-## Short pitch
+**BM:** Escalate MY™ ialah Platform Perisikan Krisis yang membantu organisasi Malaysia membuat keputusan lebih cepat dan tepat ketika berhadapan insiden kritikal.
+
+---
+
+## Short pitch (EN)
 
 > **Escalate MY™**  
 > **Crisis Intelligence Platform for Malaysian Organisations**  
 >  
 > A modern Crisis Command Centre that helps organisations assess incidents, coordinate leadership teams, manage regulatory obligations and execute response actions with confidence.
 
+## Short pitch (BM)
+
+> **Escalate MY™**  
+> **Platform Perisikan Krisis untuk Organisasi Malaysia**  
+>  
+> Pusat Perintah Krisis yang membantu organisasi menilai insiden, menyelaras kepimpinan, mengurus kewajipan kawal selia dan melaksanakan tindak balas dengan yakin.
+
 ---
 
-## Positioning
+## Positioning (EN)
 
 Most platforms help organisations monitor conversations.
 
 Escalate MY helps organisations **make decisions**.
 
-Built for listed companies, GLCs, regulated industries and complex organisations, Escalate MY transforms fragmented updates, competing priorities and regulatory uncertainty into structured decision-making.
-
-When every minute matters, leaders need clarity.
+Built for listed companies, GLCs, regulated industries and complex organisations.
 
 ---
 
-## Hero
+## Hero (EN)
 
 ### Crisis Intelligence for Malaysian Organisations
 
@@ -53,26 +68,35 @@ Know what happened.
 Know what matters.  
 Know what to do next.
 
-Escalate MY helps organisations assess incidents, coordinate decision-makers, manage regulatory obligations and execute response actions through a unified Crisis Command Centre.
-
 **[Launch Command Centre]** · **[Schedule Demonstration]**
+
+## Hero (BM)
+
+### Perisikan Krisis untuk Organisasi Malaysia
+
+# Satu Jam Pertama Menentukan Hala Tuju Krisis.
+
+Escalate MY membantu organisasi menilai insiden, menyelaras tindakan, mengurus keperluan kawal selia dan mempercepat proses membuat keputusan ketika berhadapan situasi kritikal.
+
+**[Buka Pusat Perintah]** · **[Jadual Demonstrasi]**
+
+CTA BM: **Buat keputusan dengan yakin apabila setiap minit penting.**
 
 ---
 
-## Core promise
+## Module names (BM)
 
-A crisis rarely escalates because organisations lack information.
-
-A crisis escalates because organisations struggle to:
-
-- Assess impact
-- Establish facts
-- Activate the right people
-- Make decisions quickly
-- Meet regulatory obligations
-- Maintain control
-
-Escalate MY provides the structure needed to move from uncertainty to action.
+| EN | BM |
+|----|-----|
+| Command Centre™ | Pusat Perintah™ |
+| Incident Management™ | Pengurusan Insiden™ |
+| First Sixty Minutes™ | 60 Minit Pertama™ |
+| Severity Engine™ | Enjin Penentuan Tahap Krisis™ |
+| Decision Quorum™ | Kuorum Keputusan™ |
+| Regulatory Clock™ | Jam Pematuhan™ |
+| Holding Statement Builder™ | Pembina Kenyataan Awal™ |
+| BoardBrief™ | Ringkasan Lembaga™ |
+| Audit Trail™ | Jejak Audit™ |
 
 ---
 
@@ -83,8 +107,6 @@ Escalate MY provides the structure needed to move from uncertainty to action.
 | Focuses on messaging | Focuses on **decisions** |
 | Focuses on outputs | Focuses on **execution** |
 | Supports communications teams | Supports **organisational leadership** |
-
----
 
 ## Not
 
