@@ -4,16 +4,19 @@
   "version": "0.1.0",
   "description": "Escalate MY™ — Crisis Intelligence Platform for Malaysian Organisations",
   "scripts": {
-    "dev:api": "pnpm --filter @escalate-my/api dev",
-    "dev:mcp": "pnpm --filter @escalate-my/mcp-server dev",
-    "deploy:api": "pnpm --filter @escalate-my/api deploy",
-    "deploy:mcp": "pnpm --filter @escalate-my/mcp-server deploy",
-    "db:list": "wrangler d1 migrations list escalate-my-db --remote --config wrangler.jsonc",
-    "db:migrate:local": "wrangler d1 migrations apply escalate-my-db --local --config wrangler.jsonc",
-    "db:migrate:remote": "wrangler d1 migrations apply escalate-my-db --remote --config wrangler.jsonc",
-    "db:tables": "wrangler d1 execute escalate-my-db --remote --config wrangler.jsonc --command \"SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;\"",
+    "dev:api": "pnpm --filter @escalate-my/api run dev",
+    "dev:mcp": "pnpm --filter @escalate-my/mcp-server run dev",
+    "deploy:api": "pnpm --filter @escalate-my/api run deploy",
+    "deploy:mcp": "pnpm --filter @escalate-my/mcp-server run deploy",
+    "db:list": "pnpm exec wrangler d1 migrations list escalate-my-db --remote --config wrangler.jsonc",
+    "db:migrate:local": "pnpm exec wrangler d1 migrations apply escalate-my-db --local --config wrangler.jsonc",
+    "db:migrate:remote": "pnpm exec wrangler d1 migrations apply escalate-my-db --remote --config wrangler.jsonc",
+    "db:tables": "pnpm exec wrangler d1 execute escalate-my-db --remote --config wrangler.jsonc --command \"SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;\"",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
   },
   "engines": {
     "node": ">=20"
