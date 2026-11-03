@@ -8,14 +8,14 @@
     {
       "binding": "DB",
       "database_name": "escalate-my-db",
-      "database_id": "00000000-0000-0000-0000-000000000001",
+      "database_id": "37ba487d-0637-4984-a207-e95af5309ed1",
       "migrations_dir": "../migrations"
     }
   ],
   "kv_namespaces": [
     {
       "binding": "CONFIG",
-      "id": "00000000-0000-0000-0000-000000000002"
+      "id": "6749e8ddfa1b4720bb61894d4caec4af"
     }
   ],
   "r2_buckets": [
