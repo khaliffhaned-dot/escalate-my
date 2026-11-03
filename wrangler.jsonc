@@ -12,12 +12,6 @@
       "migrations_dir": "infrastructure/migrations"
     }
   ],
-  "kv_namespaces": [
-    {
-      "binding": "CONFIG",
-      "id": "6749e8ddfa1b4720bb61894d4caec4af"
-    }
-  ],
   "r2_buckets": [
     {
       "binding": "REPORTS",
