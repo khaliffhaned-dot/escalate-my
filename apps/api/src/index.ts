@@ -1,18 +1,68 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
-import type { Env } from '@escalate-my/shared'
+import type { Env, IntelligenceAssessInput } from '@escalate-my/shared'
 import { AppError } from '@escalate-my/shared'
-import { IncidentService } from '@escalate-my/incidents'
-import { listRegulatoryClocks } from '@escalate-my/regulatory'
-import { generateAndStoreBrief } from '@escalate-my/boardbrief'
+import { IncidentService, assessIncidentRules } from '@escalate-my/incidents'
+import { listRegulatoryClocks, matchObligations, type ObligationRow } from '@escalate-my/regulatory'
+import { generateAndStoreBrief, buildBoardInsights } from '@escalate-my/boardbrief'
 
 const app = new Hono<{ Bindings: Env }>()
 
 app.use('*', cors())
 
-app.get('/health', (c) => c.json({ ok: true, service: 'escalate-my-api' }))
+app.get('/health', (c) =>
+  c.json({ ok: true, service: 'escalate-my-api', intelligence: ['decision', 'regulatory', 'board'] })
+)
 
 app.get('/api/v1/regulatory/clocks', (c) => c.json({ clocks: listRegulatoryClocks() }))
+
+/** Regulatory Intelligence™ — match facts to obligation catalog */
+app.post('/api/v1/intelligence/obligations', async (c) => {
+  const body = await c.req.json<{ facts: string; bursa_listed?: boolean }>()
+  if (!body.facts) return c.json({ error: 'facts required' }, 400)
+  const res = await c.env.DB.prepare(
+    `SELECT id, regulator, code, title_en, title_bm, trigger_hints, deadline_en, deadline_bm, status, active FROM regulatory_obligations WHERE active = 1`
+  ).all<ObligationRow>()
+  const matched = matchObligations(body.facts, res.results ?? [], {
+    bursaListed: body.bursa_listed,
+  })
+  return c.json({
+    matched,
+    headline:
+      matched.length > 0
+        ? 'Potential regulatory obligations detected — review required'
+        : 'No catalog matches — continue manual Regulatory Clock review',
+    disclaimer: 'Not legal advice. Counsel must verify all obligations.',
+  })
+})
+
+/** Decision Intelligence™ — severity + recommended actions */
+app.post('/api/v1/intelligence/assess', async (c) => {
+  const body = await c.req.json<IntelligenceAssessInput>()
+  if (!body.facts) return c.json({ error: 'facts required' }, 400)
+  const result = assessIncidentRules(body)
+  return c.json(result)
+})
+
+/** Board Intelligence™ — insights over incident state */
+app.get('/api/v1/intelligence/board/:incidentId', async (c) => {
+  const svc = new IncidentService(c.env)
+  const incident = await svc.get(c.req.param('incidentId'))
+  const quorum = await c.env.DB.prepare(`SELECT * FROM quorum_responses WHERE incident_id = ?`)
+    .bind(incident.id)
+    .all()
+  const tasks = await c.env.DB.prepare(
+    `SELECT COUNT(*) as n FROM tasks WHERE incident_id = ? AND status != 'done'`
+  )
+    .bind(incident.id)
+    .first<{ n: number }>()
+  const insights = buildBoardInsights({
+    incident,
+    quorum: (quorum.results || []) as any,
+    openTaskCount: tasks?.n ?? 0,
+  })
+  return c.json({ incident_id: incident.id, insights })
+})
 
 app.get('/api/v1/incidents', async (c) => {
   const org = c.req.query('organisation_id')
@@ -29,7 +79,13 @@ app.get('/api/v1/incidents/:id', async (c) => {
 })
 
 app.post('/api/v1/incidents', async (c) => {
-  const body = await c.req.json<{ organisation_id: string; title: string; scenario?: string; owner?: string; actor?: string }>()
+  const body = await c.req.json<{
+    organisation_id: string
+    title: string
+    scenario?: string
+    owner?: string
+    actor?: string
+  }>()
   if (!body.organisation_id || !body.title) return c.json({ error: 'organisation_id and title required' }, 400)
   const svc = new IncidentService(c.env)
   const item = await svc.create(body)

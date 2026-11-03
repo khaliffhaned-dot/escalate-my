@@ -4,122 +4,33 @@ Escalate MY earns **Crisis Intelligence Platform** by recommending and enriching
 
 ## Do not build
 
-- Media monitoring platform
-- Social listening tool
-- Meltwater / Brandwatch clone
+Media monitoring · Social listening · Meltwater/Brandwatch clones
 
-## Current vs target flow
+## Flow
 
 ```text
-Current:  Incident → Playbook → Response
-
-Target:   Incident → Risk Assessment → Decision Support
-            → Recommended Actions → Board Brief
+Incident → Risk assessment → Decision support
+        → Recommended actions → Board brief / insights
 ```
 
-That pipeline is intelligence.
+## Implemented foundations
 
----
+| Module | Endpoint | Behaviour |
+|--------|----------|-----------|
+| **Decision Intelligence™** | `POST /api/v1/intelligence/assess` | Severity, confidence, regulatory_risk, first_actions[] (rules engine; Workers AI-ready) |
+| **Regulatory Intelligence™** | `POST /api/v1/intelligence/obligations` | Match facts → D1 `regulatory_obligations` |
+| **Board Intelligence™** | `GET /api/v1/intelligence/board/:incidentId` | Top risks, pending decisions, exposure, readiness_score |
 
-## Three modules to add (only)
+Migration: `infrastructure/migrations/0002_regulatory_obligations.sql`
 
-### 1. Decision Intelligence™
+## Hard rule
 
-**Purpose:** What should leadership do next?
+Recommendations only. **Decision Quorum** before any external statement or filing.
 
-**Stack:** Workers AI + incident context (severity, industry, regulatory flags, stakeholder impact)
+## Later (optional)
 
-**Output example:**
+Similar Incident Intelligence · Operational Readiness Score (UI) · Scenario Intelligence (“what if national media?”) · Workers AI binding on assess
 
-```json
-{
-  "severity": "L2",
-  "confidence": 92,
-  "regulatory_risk": "Medium",
-  "first_actions": [
-    "Activate legal review",
-    "Prepare holding statement",
-    "Notify operations"
-  ]
-}
-```
+## Positioning (earned when these ship in product UI)
 
-Recommendations only — **never auto-release** statements or filings.
-
----
-
-### 2. Regulatory Intelligence™
-
-**Purpose:** Match incident → obligations (Bursa, PDPA, DOSH, NACSA, SC, BNM).
-
-**Stack:** D1 table `regulatory_obligations` + rules engine (+ optional Workers AI for narrative)
-
-**Flow:**
-
-```text
-Incident → Match regulations → Show obligations → “Potential Bursa disclosure — review required”
-```
-
-Still counsel-verified tags: Verified / Practice / Calibrate.
-
----
-
-### 3. Board Intelligence™
-
-**Purpose:** Upgrade BoardBrief from “generate report” to **generate insights**.
-
-**Outputs:**
-
-- Top risks
-- Pending decisions
-- Regulatory exposure
-- Recommended board actions
-
-**Stack:** existing BoardBrief + R2 + Workers AI summary over incident + quorum + clocks + audit.
-
----
-
-## Optional later (not required for the name)
-
-| Module | Idea |
-|--------|------|
-| Similar Incident Intelligence™ | D1 history + similarity score |
-| Operational Readiness Score™ | 0–100 from tasks, quorum, clocks |
-| Scenario Intelligence™ | “What if national media?” simulation |
-
----
-
-## Workers AI pattern (incident assess)
-
-**Input:** free-text facts + listed company flag + media/regulatory hints  
-**Output:** severity, confidence, regulatory_risk, first_actions[]  
-**Hard rule:** human clearance (Decision Quorum) before any external action.
-
----
-
-## Positioning (earned)
-
-> **Escalate MY™**  
-> Crisis Intelligence Platform for Malaysian Organisations
-
-Because the platform:
-
-- Assesses risk
-- Recommends actions
-- Maps regulatory obligations
-- Supports decisions
-- Generates board insights
-
-**Not** because it listens to social media.
-
----
-
-## Stack
-
-```text
-Workers AI  → recommendations & narrative insights
-D1          → incidents, obligations, history
-KV          → config / feature flags
-R2          → BoardBrief exports
-MCP         → agent access to the same tools
-```
+> Escalate MY™ — Crisis Intelligence Platform for Malaysian Organisations
