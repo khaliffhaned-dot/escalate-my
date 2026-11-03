@@ -1,16 +1,12 @@
 # Escalate MY™ — Kedudukan Bahasa Malaysia
 
-Rujukan bahasa: **BNM** (operational resilience, business continuity, crisis management, governance), **SC** (business continuity, major operational disruptions, board responsibility), **NADMA** (penyelarasan tindakan, pusat kawalan, kesiapsiagaan, tindak balas kecemasan, pengurusan maklumat).
-
-Bukan terminologi PR/komunikasi. Bunyi sistem **perintah operasi** dan **keputusan**.
+Rujukan bahasa operasi: BNM · SC · NADMA. Fokus keputusan dan perintah, bukan PR.
 
 ---
 
-## Nama kategori (BM)
+## Nama kategori (BM) — dikunci
 
-**Platform Perisikan Krisis untuk Organisasi Malaysia**
-
-(Alternatif lebih panjang: Platform Perisikan dan Pengurusan Krisis untuk Organisasi Malaysia)
+**Aplikasi Krisis Pintar untuk Organisasi Malaysia**
 
 ---
 
@@ -22,7 +18,7 @@ Bukan terminologi PR/komunikasi. Bunyi sistem **perintah operasi** dan **keputus
 
 ## Hero
 
-### Perisikan Krisis untuk Organisasi Malaysia
+### Aplikasi Krisis Pintar untuk Organisasi Malaysia
 
 # Satu Jam Pertama Menentukan Hala Tuju Krisis.
 
@@ -77,10 +73,9 @@ Escalate MY membantu organisasi bertindak secara tersusun melalui maklumat yang 
 
 | Elak | Guna |
 |------|------|
-| Platform komunikasi / pengurusan reputasi | Platform perisikan krisis |
+| Platform komunikasi / pengurusan reputasi | Aplikasi krisis pintar / perisikan keputusan |
 | Memantau perbualan | Menilai insiden / menyelaraskan tindakan |
 | Pengurusan mesej | Proses membuat keputusan |
-| Sokongan komunikasi | Tadbir urus & ketahanan operasi |
 
 ---
 
@@ -88,6 +83,6 @@ Escalate MY membantu organisasi bertindak secara tersusun melalui maklumat yang 
 
 | EN | BM |
 |----|-----|
-| Crisis Intelligence Platform for Malaysian Organisations | Platform Perisikan Krisis untuk Organisasi Malaysia |
+| Crisis Intelligence Platform for Malaysian Organisations | **Aplikasi Krisis Pintar untuk Organisasi Malaysia** |
 | From uncertainty to action… | Daripada ketidakpastian kepada keputusan yang tepat. |
 | The First Hour Decides Everything. | Satu Jam Pertama Menentukan Hala Tuju Krisis. |

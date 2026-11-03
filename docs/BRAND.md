@@ -12,13 +12,14 @@ Strategic advisory and product company focused on crisis governance, reputation 
 
 # Escalate MY™
 
-### Crisis Intelligence Platform for Malaysian Organisations
-### Platform Perisikan Krisis untuk Organisasi Malaysia
-
-| EN | BM |
-|----|-----|
-| From uncertainty to action in the moments that matter most. | **Daripada ketidakpastian kepada keputusan yang tepat.** |
-| The First Hour Decides Everything. | **Satu Jam Pertama Menentukan Hala Tuju Krisis.** |
+| | |
+|--|--|
+| **EN category** | Crisis Intelligence Platform for Malaysian Organisations |
+| **BM category** | **Aplikasi Krisis Pintar untuk Organisasi Malaysia** |
+| **EN tagline** | From uncertainty to action in the moments that matter most. |
+| **BM tagline** | **Daripada ketidakpastian kepada keputusan yang tepat.** |
+| **EN hero** | The First Hour Decides Everything. |
+| **BM hero** | **Satu Jam Pertama Menentukan Hala Tuju Krisis.** |
 
 Full BM copy: [POSITIONING-BM.md](./POSITIONING-BM.md)
 
@@ -28,7 +29,7 @@ Full BM copy: [POSITIONING-BM.md](./POSITIONING-BM.md)
 
 **EN:** Escalate MY™ is a Crisis Intelligence Platform that helps Malaysian organisations make faster, better decisions during critical incidents.
 
-**BM:** Escalate MY™ ialah Platform Perisikan Krisis yang membantu organisasi Malaysia membuat keputusan lebih cepat dan tepat ketika berhadapan insiden kritikal.
+**BM:** Escalate MY™ ialah Aplikasi Krisis Pintar yang membantu organisasi Malaysia membuat keputusan lebih cepat dan tepat ketika berhadapan insiden kritikal.
 
 ---
 
@@ -42,19 +43,9 @@ Full BM copy: [POSITIONING-BM.md](./POSITIONING-BM.md)
 ## Short pitch (BM)
 
 > **Escalate MY™**  
-> **Platform Perisikan Krisis untuk Organisasi Malaysia**  
+> **Aplikasi Krisis Pintar untuk Organisasi Malaysia**  
 >  
 > Pusat Perintah Krisis yang membantu organisasi menilai insiden, menyelaras kepimpinan, mengurus kewajipan kawal selia dan melaksanakan tindak balas dengan yakin.
-
----
-
-## Positioning (EN)
-
-Most platforms help organisations monitor conversations.
-
-Escalate MY helps organisations **make decisions**.
-
-Built for listed companies, GLCs, regulated industries and complex organisations.
 
 ---
 
@@ -64,15 +55,13 @@ Built for listed companies, GLCs, regulated industries and complex organisations
 
 # The First Hour Decides Everything.
 
-Know what happened.  
-Know what matters.  
-Know what to do next.
+Know what happened. Know what matters. Know what to do next.
 
 **[Launch Command Centre]** · **[Schedule Demonstration]**
 
 ## Hero (BM)
 
-### Perisikan Krisis untuk Organisasi Malaysia
+### Aplikasi Krisis Pintar untuk Organisasi Malaysia
 
 # Satu Jam Pertama Menentukan Hala Tuju Krisis.
 
@@ -99,14 +88,6 @@ CTA BM: **Buat keputusan dengan yakin apabila setiap minit penting.**
 | Audit Trail™ | Jejak Audit™ |
 
 ---
-
-## The difference
-
-| Traditional communications software | Escalate MY |
-|-------------------------------------|-------------|
-| Focuses on messaging | Focuses on **decisions** |
-| Focuses on outputs | Focuses on **execution** |
-| Supports communications teams | Supports **organisational leadership** |
 
 ## Not
 

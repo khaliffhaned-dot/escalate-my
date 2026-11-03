@@ -2,10 +2,16 @@
 
 **Company:** Quantum PR  
 **Product:** Escalate MY™  
-**Category:** Crisis Intelligence Platform for Malaysian Organisations  
-**Tagline:** From uncertainty to action in the moments that matter most.
 
-See [BRAND.md](./BRAND.md) for full brand architecture, hero, promise and difference table.
+| Lang | Category |
+|------|----------|
+| **EN** | Crisis Intelligence Platform for Malaysian Organisations |
+| **BM** | **Aplikasi Krisis Pintar untuk Organisasi Malaysia** |
+
+**Tagline EN:** From uncertainty to action in the moments that matter most.  
+**Tagline BM:** Daripada ketidakpastian kepada keputusan yang tepat.
+
+See [BRAND.md](./BRAND.md) and [POSITIONING-BM.md](./POSITIONING-BM.md).
 
 ## Editions
 
