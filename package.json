@@ -1,0 +1,20 @@
+{
+  "name": "escalate-my",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Escalate MY™ — Crisis Command Centre for Malaysian Organisations",
+  "scripts": {
+    "dev:api": "pnpm --filter @escalate-my/api dev",
+    "dev:mcp": "pnpm --filter @escalate-my/mcp-server dev",
+    "deploy:api": "pnpm --filter @escalate-my/api deploy",
+    "deploy:mcp": "pnpm --filter @escalate-my/mcp-server deploy",
+    "db:migrate:local": "wrangler d1 migrations apply escalate-my-db --local --config infrastructure/wrangler/wrangler.jsonc",
+    "db:migrate:remote": "wrangler d1 migrations apply escalate-my-db --remote --config infrastructure/wrangler/wrangler.jsonc",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
