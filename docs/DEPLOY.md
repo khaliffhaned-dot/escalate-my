@@ -1,57 +1,87 @@
-# Deploy Escalate MY API (real D1)
+# Deploy Escalate MY API
 
-## 1. Login
+## Prerequisites
 
-```bash
-cd escalate-my
+```powershell
+cd C:\Users\Mkhal\escalate-my
+git pull
 pnpm install
 npx wrangler login
 ```
 
-## 2. Create resources
+## 1. Check migrations are visible
 
-```bash
-bash scripts/provision-cloudflare.sh
+```powershell
+pnpm db:list
 ```
 
-Or manually:
+You should see `0001_init.sql` and `0002_regulatory_obligations.sql`.
 
-```bash
-npx wrangler d1 create escalate-my-db
-npx wrangler kv namespace create CONFIG
-npx wrangler r2 bucket create escalate-my-reports
+If list is empty, confirm folder `infrastructure\migrations` exists after `git pull`.
+
+## 2. Apply migrations (remote D1)
+
+```powershell
+pnpm db:migrate:remote
 ```
 
-## 3. Patch `infrastructure/wrangler/wrangler.jsonc`
+## 3. Verify tables
 
-Replace placeholder IDs:
+```powershell
+pnpm db:tables
+```
 
-- `d1_databases[0].database_id`
-- `kv_namespaces[0].id`
+Expect: organisations, users, incidents, incident_updates, tasks, quorum_responses, reports, audit_log, regulatory_obligations, d1_migrations
 
-## 4. Migrate + deploy
+## 4. Deploy API
 
-```bash
-npx wrangler d1 migrations apply escalate-my-db --remote --config infrastructure/wrangler/wrangler.jsonc
+```powershell
 pnpm deploy:api
 ```
 
+Copy the published URL, e.g. `https://escalate-my-api.<account>.workers.dev`
+
 ## 5. Smoke test
 
-```bash
-curl https://escalate-my-api.<sub>.workers.dev/health
+```powershell
+curl https://escalate-my-api.<account>.workers.dev/health
 
-curl -X POST https://escalate-my-api.<sub>.workers.dev/api/v1/intelligence/assess \
-  -H 'content-type: application/json' \
-  -d '{"facts":"Product recall, three customers, no national media","bursaListed":true}'
+curl -X POST https://escalate-my-api.<account>.workers.dev/api/v1/intelligence/assess `
+  -H "content-type: application/json" `
+  -d "{\"facts\":\"Product recall, three customers, no national media\",\"bursaListed\":true}"
 ```
 
-## 6. Wire UI
+## 6. Wire UI (Cloudflare Pages)
 
-Cloudflare Pages (crisis-comms-my / escalate-my web) env:
+Set environment variable on the Pages project (crisis-comms-my):
 
 ```text
-VITE_API_BASE=https://escalate-my-api.<sub>.workers.dev
+VITE_API_BASE=https://escalate-my-api.<account>.workers.dev
 ```
 
-Rebuild Pages after setting the variable.
+Redeploy Pages.
+
+## Troubleshooting
+
+### "No migrations to apply" but tables missing
+
+```powershell
+pnpm db:list
+pnpm db:tables
+```
+
+If tables are empty and list shows migrations as not applied, run `pnpm db:migrate:remote` again from repo root (uses `wrangler.jsonc` at root).
+
+### Static assets error
+
+Do not run bare `wrangler pages deploy` without a dist folder. API deploy is:
+
+```powershell
+pnpm deploy:api
+```
+
+or
+
+```powershell
+npx wrangler deploy --config wrangler.jsonc
+```

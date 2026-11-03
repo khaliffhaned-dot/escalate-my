@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler dev --config ../../infrastructure/wrangler/wrangler.jsonc",
-    "deploy": "wrangler deploy --config ../../infrastructure/wrangler/wrangler.jsonc",
+    "dev": "wrangler dev --config ../../wrangler.jsonc",
+    "deploy": "wrangler deploy --config ../../wrangler.jsonc",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
@@ -18,6 +18,6 @@
   "devDependencies": {
     "typescript": "^5.7.0",
     "wrangler": "^4.0.0",
-    "@cloudflare/workers-types": "^4.0.0"
+    "@cloudflare/workers-types": "^4.20251102.0"
   }
 }
